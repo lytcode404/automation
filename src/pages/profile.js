@@ -66,7 +66,7 @@ const Profile = () => {
               Go to Manage your settings of your account
             </li>
             <li>
-              just type "App Passwords"
+              just type &quot;App Passwords&quot;
             </li>
             <li>
               click the top option, fill your password and generate temperory password
