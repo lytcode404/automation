@@ -36,7 +36,7 @@ export default function App({ Component, pageProps }) {
       {isLoggedIn ? (
         <div className={`flex w-full bg-gray-50 dark:bg-gray-900`}>
           <Sidebar />
-          <div className="h-screen w-[350px]"></div>
+          <div className="h-screen w-[350px] max-sm:hidden"></div>
           <Provider store={store}>
             <Component {...pageProps} />
           </Provider>
