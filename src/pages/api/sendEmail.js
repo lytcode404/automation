@@ -7,7 +7,7 @@ export default async function handler(req, res) {
     return;
   }
 
-  const { recipient, subject, body } = req.body;
+  const { recipient, subject, body, useEmail, usePassword } = req.body;
 
   if (!recipient || !subject || !body) {
     res.status(400).json({ message: 'Invalid request' });
@@ -15,16 +15,17 @@ export default async function handler(req, res) {
   }
 
   try {
+    console.log(recipient, subject, body, useEmail, usePassword);
     const transporter = nodemailer.createTransport({
       service: 'Gmail', // Change to your email provider
       auth: {
-        user: 'rdilshad3559@gmail.com', // Replace with your email address
-        pass: 'pkokdpcswogzaqqu', // Replace with your email password
+        user: useEmail, // Replace with your email address
+        pass: usePassword, // Replace with your email password
       },
     });
 
     const mailOptions = {
-      from: 'rdilshad3559@gmail.com', // Replace with your email address
+      from: useEmail, // Replace with your email address
       to: recipient,
       subject: subject,
       text: body,

@@ -7,6 +7,8 @@ import Cards from "../components/Cards.jsx";
 import Table from "../components/Table.jsx";
 import { useSelector } from "react-redux";
 import { useRouter } from "next/router.js";
+import { collection, doc, getDoc, getDocs } from "firebase/firestore";
+import { auth, db } from "@/db/FirebaseConfig.js";
 
 const IndexPage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,8 +19,33 @@ const IndexPage = () => {
   const router = useRouter();
   const recipients = useSelector((state) => state.recipients);
   const [sent, setSent] = useState(0);
+  const [useEmail, setUseEmail] = useState("")
+  const [usePassword, setUsePassword] = useState("")
 
   useEffect(() => {
+    const userId = auth.currentUser.uid;
+    const userRef = doc(db, "users", userId);
+  
+    const fetchData = async () => {
+      try {
+        const docSnapshot = await getDoc(userRef);
+        if (docSnapshot.exists()) {
+          const userData = docSnapshot.data();
+          setUseEmail(userData.credentials.UseEmail)
+          setUsePassword(userData.credentials.UsePassword)
+          // console.log("User Data:", userData);
+          // Access specific fields like userData.fieldName
+          // console.log("Email:", userData.credentials.UseEmail);
+          // console.log("Password:", userData.credentials.UsePassword);
+        } else {
+          console.log("User document does not exist");
+        }
+      } catch (error) {
+        console.error("Error fetching user data:", error);
+      }
+    };
+  
+    fetchData();
     if (recipients) {
       const initialStatus = recipients.map((recipient) => ({
         email: recipient,
@@ -37,7 +64,7 @@ const IndexPage = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ recipient, subject, body }),
+        body: JSON.stringify({ recipient, subject, body, useEmail, usePassword }),
       });
 
       if (response.ok) {
