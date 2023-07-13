@@ -3,7 +3,7 @@ import { addDoc, doc, setDoc, updateDoc } from "firebase/firestore";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 
-const profile = () => {
+const Profile = () => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
@@ -101,4 +101,4 @@ const profile = () => {
   );
 };
 
-export default profile;
+export default Profile;
