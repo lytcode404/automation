@@ -70,7 +70,7 @@ const Login = () => {
               <Image
                 aria-hidden="true"
                 className="h-full w-full object-cover dark:hidden"
-                src="login-office.jpeg"
+                src="/login-office.jpeg"
                 alt="Office"
                 width={700}
                 height={700}
@@ -78,7 +78,7 @@ const Login = () => {
               <Image
                 aria-hidden="true"
                 className="hidden h-full w-full object-cover dark:block"
-                src="../assets/img/login-office-dark.jpeg"
+                src="/login-office.jpeg"
                 alt="Office"
                 height={500}
                 width={700}

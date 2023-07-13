@@ -163,7 +163,7 @@ const Sidebar = () => {
                   aria-label="submenu"
                 >
                   <li className="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
-                    <Link className="w-full" href="/profile">
+                    <Link className="w-full" href="/Profile">
                       Profile
                     </Link>
                   </li>

@@ -34,7 +34,7 @@ const Profile = () => {
   
   return (
     <>
-      <div className="mt-20 w-full">
+      <div className="mt-20 w-10/12 pr-20">
         <h1 className="text-3xl font-bold">Enter Your Credentials</h1>
         <p>
           Enter your email address from which you want to share multiple
@@ -63,34 +63,20 @@ const Profile = () => {
           <p className="font-semibold">Detailed steps</p>
           <ul className="mt-2 list-disc pl-6">
             <li>
-              Enable two-step verification: Visit the account settings or
-              security settings of the specific service or platform you are
-              using. Look for options related to two-step verification,
-              two-factor authentication, or login approvals.
+              Go to Manage your settings of your account
             </li>
             <li>
-              Choose the preferred method: Typically, there are multiple options
-              for two-step verification, such as receiving a verification code
-              via SMS, using an authentication app (like Google Authenticator or
-              Authy), or utilizing hardware security keys.
+              just type "App Passwords"
             </li>
             <li>
-              Follow the instructions: Once you select your preferred method,
-              the service will guide you through the setup process. This may
-              involve linking your phone number, installing an authentication
-              app, or registering a security key.
+              click the top option, fill your password and generate temperory password
             </li>
             <li>
-              Generate security codes: After setting up two-step verification,
-              you will usually have the option to generate one-time security
-              codes when needed. These codes are usually accessible within the
-              account settings or through the authentication app you have
-              installed. They are used as an additional layer of security during
-              the login process.
+              Now in the drop down select app: Mail, and select type phone then generate and copy paste it here
             </li>
           </ul>
           <button
-            className="focus:shadow-outline-purple mt-4 block w-full rounded-lg border border-transparent bg-purple-600 px-4 py-2 text-center text-sm font-medium leading-5 text-white transition-colors duration-150 hover:bg-purple-700 focus:outline-none active:bg-purple-600"
+            className="w-fit focus:shadow-outline-purple mt-4 block rounded-lg border border-transparent bg-purple-600 px-4 py-2 text-center text-sm font-medium leading-5 text-white transition-colors duration-150 hover:bg-purple-700 focus:outline-none active:bg-purple-600"
             onClick={handleUpload}
           >
             Upload
