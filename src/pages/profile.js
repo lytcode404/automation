@@ -64,7 +64,7 @@ const profile = () => {
           <ul className="mt-2 list-disc pl-6">
             <li>
               Enable two-step verification: Visit the account settings or
-              security settings of the specific service or platform you're
+              security settings of the specific service or platform you are
               using. Look for options related to two-step verification,
               two-factor authentication, or login approvals.
             </li>
@@ -84,7 +84,7 @@ const profile = () => {
               Generate security codes: After setting up two-step verification,
               you will usually have the option to generate one-time security
               codes when needed. These codes are usually accessible within the
-              account settings or through the authentication app you've
+              account settings or through the authentication app you have
               installed. They are used as an additional layer of security during
               the login process.
             </li>

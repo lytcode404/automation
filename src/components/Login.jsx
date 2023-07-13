@@ -4,6 +4,7 @@ import {
   signInWithEmailAndPassword,
 } from "@firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
@@ -66,17 +67,21 @@ const Login = () => {
         <div className="mx-auto h-full max-w-4xl flex-1 overflow-hidden rounded-lg bg-white shadow-xl dark:bg-gray-800">
           <div className="flex flex-col overflow-y-auto md:flex-row">
             <div className="h-32 md:h-auto md:w-1/2">
-              <img
+              <Image
                 aria-hidden="true"
                 className="h-full w-full object-cover dark:hidden"
                 src="login-office.jpeg"
                 alt="Office"
+                width={700}
+                height={700}
               />
-              <img
+              <Image
                 aria-hidden="true"
                 className="hidden h-full w-full object-cover dark:block"
                 src="../assets/img/login-office-dark.jpeg"
                 alt="Office"
+                height={500}
+                width={700}
               />
             </div>
 
